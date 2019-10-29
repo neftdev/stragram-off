@@ -1,13 +1,17 @@
 {
   "name": "stragram-off",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Micro-servicio de restricción de contenido para el proyecto del laboratorio de Análisis y diseño 2, GeekStragram",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NeftXx/stragram-off.git"
+  },
+  "main": "backend/src/index.js",
   "scripts": {},
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Ronald Berdúo - NeftXx",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": ">=4.17.1"
   }
 }

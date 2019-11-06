@@ -20,13 +20,6 @@ export const analyzeWords = (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    return res.status(500).json("Internal Server error");
+    return res.status(500).json({ message: "Internal Server error"});
   }
 };
-
-// {
-// 	"words": [
-// 		"hola",
-// 		"imagen"
-// 	]
-// }

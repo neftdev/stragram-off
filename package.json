@@ -1,17 +1,50 @@
 {
   "name": "stragram-off",
   "version": "0.1.0",
-  "description": "Micro-servicio de restricción de contenido para el proyecto del laboratorio de Análisis y diseño 2, GeekStragram",
+  "description": "Micro-servicios de restricción de contenido para el proyecto del laboratorio de Análisis y diseño 2, GeekStragram",
   "repository": {
     "type": "git",
     "url": "https://github.com/NeftXx/stragram-off.git"
   },
-  "main": "backend/src/index.js",
-  "scripts": {},
-  "keywords": [],
+  "main": "src/app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production babel-node src/app.js --exec",
+    "postinstall": "npm run build",
+    "dev": "cross-env NODE_ENV=development nodemon src/app.js --ignore www --exec babel-node",
+    "webpack": "webpack-dev-server --open",
+    "build": "cross-env NODE_ENV=production webpack -p"
+  },
+  "keywords": [
+    "badwords",
+    "image"
+  ],
   "author": "Ronald Berdúo - NeftXx",
   "license": "MIT",
   "dependencies": {
-    "express": ">=4.17.1"
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.0",
+    "@babel/node": "^7.7.0",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "aws-sdk": "^2.564.0",
+    "bootstrap": "^4.3.1",
+    "cors": "^2.8.5",
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0",
+    "express": ">=4.17.1",
+    "jquery": "^3.4.1",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
   }
 }

@@ -13,50 +13,86 @@
       </div>
     </nav>
     <main>
-      <div class="container">        
+      <div class="container">
         <div class="pt-5">
+          <!-- ANALYZE WORDS -->
           <div id="analyze-words">
             <h2>
-              <a href="#analyze-words" aria-hidden="true" class="header-anchor">#</a>
+              <a href="#analyze-words" aria-hidden="true" class="header-anchor"
+                >#</a
+              >
               [POST] /api/analyze-words
             </h2>
             <hr />
-            <p>Servicio para analizar palabras que pueden ser ofensivas. Ejemplo de una entrada para consumir el servicio:</p>
+            <p>
+              Servicio para analizar palabras que pueden ser ofensivas. Ejemplo
+              de una entrada para consumir el servicio:
+            </p>
 
             <pre>
               <code class="rounded-lg" id="entry-word">
               </code>
             </pre>
 
-            <p>Si no ha ocurrido algun error, el servicio devuelve código http 200 y la siguiente salida: </p>
+            <p>
+              Si no ha ocurrido algun error, el servicio devuelve código http
+              200 y la siguiente salida:
+            </p>
 
             <pre>
-              <code class="rounded-lg" id="output-word1">
+              <code class="rounded-lg" id="output-word">
               </code>
             </pre>
-
-            <p>En caso de error devuelve error http 500 y el siguiente mensaje:</p>
-
-            <pre>
-              <code class="rounded-lg" id="output-word2">
-              </code>
-            </pre>
-            
           </div>
+          <!-- END ANALYZE WORD -->
 
+          <!-- ANALYZE IMAGE -->
           <div id="analyze-image">
             <h2>
-              <a href="#analyze-image" aria-hidden="true" class="header-anchor">#</a>
+              <a href="#analyze-image" aria-hidden="true" class="header-anchor"
+                >#</a
+              >
               [POST] /api/analyze-image
             </h2>
             <hr />
-            <p></p>
+            <p>
+              Servicio para analizar imagen que pueden tener contenido no
+              seguro. Ejemplo de una entrada para consumir el servicio:
+            </p>
             <pre>
               <code class="rounded-lg" id="entry-image">
               </code>
             </pre>
+            <p>
+              Si no ha ocurrido algun error, el servicio devuelve código http
+              200 y devuelve una salida como la siguiente:
+            </p>
+
+            <pre>
+              <code class="rounded-lg" id="output-image">
+              </code>
+            </pre>
           </div>
-          
+          <!-- END ANALYZE WORD -->
+
+          <!-- ERROR -->
+          <div id="error">
+            <h2>
+              <a href="#error" aria-hidden="true" class="header-anchor">#</a>
+              ERROR
+            </h2>
+            <hr />
+            <p>
+              En caso de error en algun servcio devuelve error http 500 y el
+              siguiente mensaje:
+            </p>
+
+            <pre>
+              <code class="rounded-lg" id="output-error">
+              </code>
+            </pre>
+          </div>
+          <!-- END ERROR -->
         </div>
       </div>
     </main>

@@ -7,7 +7,7 @@ export const analyzeWords = (req, res) => {
     let analyze = [];
 
     words.forEach(word => {
-      let isBadWord = badWords.includes(word);
+      let isBadWord = badWords.includes(word.toLowerCase());
       analyze.push({
         word,
         isBadWord
@@ -20,6 +20,6 @@ export const analyzeWords = (req, res) => {
     });
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ message: "Internal Server error"});
+    return res.status(500).json({ message: "Internal Server error" });
   }
 };

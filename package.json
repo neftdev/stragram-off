@@ -11,7 +11,7 @@
     "start": "cross-env NODE_ENV=production babel-node src/app.js --exec",
     "postinstall": "npm run build",
     "dev": "cross-env NODE_ENV=development nodemon src/app.js --ignore www --exec babel-node",
-    "webpack": "webpack-dev-server --open",
+    "webpack": "cross-env NODE_ENV=development webpack-dev-server --open",
     "build": "cross-env NODE_ENV=production webpack -p"
   },
   "keywords": [
@@ -35,7 +35,6 @@
     "highlight.js": "^9.16.2",
     "jquery": "^3.4.1",
     "morgan": "^1.9.1",
-    "multer": "^1.4.2",
     "popper.js": "^1.16.0"
   },
   "devDependencies": {

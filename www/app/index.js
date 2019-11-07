@@ -6,7 +6,8 @@ import "../css/index.css";
 
 hljs.registerLanguage("json", json);
 
-const jsonWords = `{
+// Entradas JSON
+const inputWords = `{
   "words": [
     "hola",
     "imagen"
@@ -14,12 +15,12 @@ const jsonWords = `{
 }
 `;
 
-let entryWord = document.getElementById("entry-word");
-entryWord.innerHTML = hljs.highlight("json", jsonWords).value;
-hljs.highlightBlock(entryWord);
+const inputImage = `{
+  "image": "64-bit base string"
+}`;
 
-
-let resWords = `{
+// Salidas JSON
+const outputWords = `{
   "message": "Analyze of words",
   "analyze": [
       {
@@ -34,14 +35,45 @@ let resWords = `{
 }
 `;
 
-let outputWord = document.getElementById("output-word1");
-outputWord.innerHTML = hljs.highlight("json", resWords).value;
-hljs.highlightBlock(outputWord);
+const outputImage = `{
+  "message": "Analyze of an image",
+  "ModerationLabels": [
+      {
+          "Confidence": 96.31548309326172,
+          "Name": "Violence",
+          "ParentName": ""
+      },
+      {
+          "Confidence": 96.31548309326172,
+          "Name": "Weapon Violence",
+          "ParentName": "Violence"
+      }
+  ]
+}`;
 
-resWords = `{
+const outputError = `{
   "message": "Internal Server error"
 }`;
 
-outputWord = document.getElementById("output-word2");
-outputWord.innerHTML = hljs.highlight("json", resWords).value;
-hljs.highlightBlock(outputWord);
+// WORDS
+let myDiv = document.getElementById("entry-word");
+myDiv.innerHTML = hljs.highlight("json", inputWords).value;
+hljs.highlightBlock(myDiv);
+
+myDiv = document.getElementById("output-word");
+myDiv.innerHTML = hljs.highlight("json", outputWords).value;
+hljs.highlightBlock(myDiv);
+
+// IMAGE
+myDiv = document.getElementById("entry-image");
+myDiv.innerHTML = hljs.highlight("json", inputImage).value;
+hljs.highlightBlock(myDiv);
+
+myDiv = document.getElementById("output-image");
+myDiv.innerHTML = hljs.highlight("json", outputImage).value;
+hljs.highlightBlock(myDiv);
+
+// ERROR
+myDiv = document.getElementById("output-error");
+myDiv.innerHTML = hljs.highlight("json", outputError).value;
+hljs.highlightBlock(myDiv);

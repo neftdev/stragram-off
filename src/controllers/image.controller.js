@@ -6,6 +6,7 @@ if (process.env.NODE_ENV === "development") {
 }
 
 import AWS from "aws-sdk";
+import fs from "fs";
 
 const rekognition = new AWS.Rekognition({
   region: process.env.AWS_REGION,
@@ -15,8 +16,14 @@ const rekognition = new AWS.Rekognition({
 
 export const analyzeImage = async (req, res) => {
   try {
-    const { image } = req.body;
-    let Bytes = Buffer.from(image, "base64");
+    const file = req.file;
+    let Bytes = null;
+    if (file) {
+      Bytes = fs.readFileSync(file.path);
+    } else {
+      const { image } = req.body;
+      Bytes = Buffer.from(image, "base64");
+    }
     let params = {
       Image: {
         Bytes
@@ -29,7 +36,7 @@ export const analyzeImage = async (req, res) => {
       ModerationLabels: result.ModerationLabels
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return res.status(500).json({ message: "Internal Server error" });
   }
 };
